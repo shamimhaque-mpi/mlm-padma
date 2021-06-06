@@ -1,0 +1,53 @@
+@extends('backend.user.layouts.master')
+
+@section('content')
+    <div class="container-fluid">
+        <h2 class="mt-4">Stockist Point</h2>
+        <ol class="breadcrumb mb-4 rounded-0">
+            <li class="breadcrumb-item"><a href="{{route('user.dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Stockist Point</li>
+        </ol>
+
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered" id="dataTable">
+                	<thead>
+                		<tr>
+                			<th>SL</th>
+                			<th>Username</th>
+                			<th>User ID</th>
+                			<th>Point</th>
+                			<th>Action</th>
+                		</tr>
+                	</thead>
+                	<tbody>
+                		<tr>
+                			<td>1</td>
+                			<td>developer</td>
+                			<td>#5123</td>
+                			<td>15.65</td>
+                			<td width="150"><a href="#" class="link">View Profile</a></td>
+                		</tr>
+                	</tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+@endsection
+
+@push('styles')
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+@endpush
+
+@push('scripts')
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+
+    <script>
+        // Call the dataTables jQuery plugin
+        $(document).ready(function() {
+            $('#dataTable').DataTable();
+        });
+    </script>
+@endpush
